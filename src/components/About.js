@@ -4,7 +4,7 @@ export class About extends Component {
     constructor(props) {
         super(props);
         this.state={
-            title:"Curriculum vitae developped with React js",
+            title:"Curriculum vitae",
             contact:{name:"Bonevy BEBY",profile:"images/profile.jpg",email:"bonevybeby@gmail.com"},
             skills:[
                 {id:1,skill:"Software engineering"},
@@ -21,14 +21,19 @@ export class About extends Component {
     }
     addSkill= (event)=> {
         event.preventDefault();
-        let new_skill={
-        id:[...this.state.skills].pop().id+1,
-        skill:this.state.skillValue
+            let new_skill=
+            {
+              id:[...this.state.skills].pop().id+1,
+              skill:this.state.skillValue
+            }
+            this.setState({skills:[...this.state.skills,new_skill]});
     }
-    this.setState({
-        skills:[...this.state.skills,new_skill]
-    });
 
+    onDeleteSkill=(skill)=> {
+        let index = this.state.skills.indexOf(skill);
+        let listSkills = [...this.state.skills];
+        listSkills.splice(index, 1);
+        this.setState({skills: listSkills});
     }
     render() {
         return (
@@ -70,7 +75,11 @@ export class About extends Component {
                             {
                                 this.state.skills.map((s,index)=>
                                  <tr>
-                                     <td>{s.id}</td> <td>{s.skill}</td>
+                                     <td>{s.id}</td>
+                                     <td>{s.skill}</td>
+                                     <td>
+                                         <button className="btn btn-danger" onClick={()=>this.onDeleteSkill(s)}>x</button>
+                                     </td>
                                  </tr>
                                 )
                             }
