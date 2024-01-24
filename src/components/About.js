@@ -69,20 +69,23 @@ export class About extends Component {
                                 </div>
                             </form>
                         <table className="table">
+
+                            <tbody>
                             <tr>
                                 <th>ID</th><th>Skill</th>
                             </tr>
-                            {
+                               {
                                 this.state.skills.map((s,index)=>
-                                 <tr>
-                                     <td>{s.id}</td>
-                                     <td>{s.skill}</td>
-                                     <td>
-                                         <button className="btn btn-danger" onClick={()=>this.onDeleteSkill(s)}>x</button>
-                                     </td>
-                                 </tr>
+                                    <tr key={index}>
+                                        <td>{s.id}</td>
+                                        <td>{s.skill}</td>
+                                        <td>
+                                            <button className="btn btn-danger" onClick={()=>this.onDeleteSkill(s)}>x</button>
+                                        </td>
+                                    </tr>
                                 )
-                            }
+                              }
+                            </tbody>
                         </table>
                     </div>
                 </div>

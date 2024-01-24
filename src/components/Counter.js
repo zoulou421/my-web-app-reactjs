@@ -33,7 +33,9 @@ export default class Counter extends React.Component {
                 <div className="card-body">
                     {
                         this.state.list.map((v,index)=>
-                            <img src={this.props.image?this.props.image:'images/channels4_profile.jpg'} width={100}/>
+                            <span key={index}>
+                                <img src={this.props.image?this.props.image:'images/channels4_profile.jpg'} width={100} alt=""/>
+                            </span>
                         )
                     }
                 </div>
