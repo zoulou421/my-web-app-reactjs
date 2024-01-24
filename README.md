@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+![profile1.JPG](profile1.JPG)
+
+![profile2.JPG](profile2.JPG)
 ## Available Scripts
 
 In the project directory, you can run:
