@@ -23,7 +23,7 @@ export default class Counter extends React.Component {
             <div className="card">
                 <div className="card-header">
                     <strong>
-                        {this.props.title}:{this.state.counter}
+                        {this.props.title?this.props.title:'Defaut title'}:{this.state.counter}
                     </strong>
                 </div>
                 <div className="ms-auto">
@@ -33,12 +33,10 @@ export default class Counter extends React.Component {
                 <div className="card-body">
                     {
                         this.state.list.map((v,index)=>
-                            <img src={this.props.image} width={100}/>
+                            <img src={this.props.image?this.props.image:'images/channels4_profile.jpg'} width={100}/>
                         )
                     }
                 </div>
-
-
             </div>
         )
     }
