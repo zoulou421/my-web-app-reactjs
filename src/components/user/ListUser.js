@@ -9,7 +9,7 @@ export default class ListUser extends Component {
     }
 
     componentDidMount() {
-        fetch("localhost/project-name/...password=passer&statut=0?nom="+this.state.nom+"&prenom="+this.state.prenom+"..."+this.state.statut,requestOptions)
+        fetch("localhost/project-name/...password=passer&statut=0?nom="+this.state.nom+"&prenom="+this.state.prenom+"..."+this.state.statut)
             .then(result=>result.json())
             .then(result=>{
                 this.setState({
